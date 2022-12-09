@@ -14,4 +14,6 @@ $ python3 gen-prices-2.py
 ```
 
 ## Generar clips
-TODO
+```
+$ python3 gen-video.py
+```
