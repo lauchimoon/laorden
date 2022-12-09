@@ -1,5 +1,5 @@
 # Generate prices table from spreadsheet
-# Script valid for burger1.png
+# Script valid for templates/template-burger1.png
 
 import pandas as pd
 from PIL import Image
