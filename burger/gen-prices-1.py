@@ -10,8 +10,8 @@ WHITE = (255, 255, 255)
 
 img = Image.open("./templates/template-burger1.png")
 draw = ImageDraw.Draw(img)
-font_big = ImageFont.truetype("big_noodle_titling.ttf", 57)
-font_sml = ImageFont.truetype("big_noodle_titling.ttf", 42)
+font_big = ImageFont.truetype("../big_noodle_titling.ttf", 57)
+font_sml = ImageFont.truetype("../big_noodle_titling.ttf", 42)
 
 data = pd.read_excel('./data.xlsx').to_dict()
 
