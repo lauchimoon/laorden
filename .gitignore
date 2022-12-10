@@ -1,3 +1,4 @@
 coords.py
 im.py
 out/
+__pycache__/
