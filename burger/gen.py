@@ -14,7 +14,6 @@ def burger1(d):
     font_sml = ImageFont.truetype("../big_noodle_titling.ttf", 42)
 
     for i in range(0, 22): # Burgers
-        product = d['Productos'][i]
         price   = f"${data['Precios'][i]}"
         x       = d['X'][i]
         y       = d['Y'][i]
@@ -22,7 +21,6 @@ def burger1(d):
         draw.text(coords, price, WHITE, font=font_big)
 
     for i in range(22, 25): # Drinks
-        product = d['Productos'][i]
         price   = f"${d['Precios'][i]}"
         x       = d['X'][i]
         y       = d['Y'][i]
@@ -38,7 +36,6 @@ def burger2(d):
     font = ImageFont.truetype("../big_noodle_titling.ttf", 80)
 
     for i in range(25, 32):
-        product = d['Productos'][i]
         price   = f"${d['Precios'][i]}"
         x       = d['X'][i]
         y       = d['Y'][i]

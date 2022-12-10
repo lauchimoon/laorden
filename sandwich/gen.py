@@ -13,7 +13,6 @@ def sandwich1(d):
     font = ImageFont.truetype("../big_noodle_titling.ttf", 60)
 
     for i in range(0, 20):
-        product = d['Productos'][i]
         price   = f"{d['Precios'][i]}"
         x       = d['X'][i]
         y       = d['Y'][i]
@@ -29,7 +28,6 @@ def sandwich2(d):
     font = ImageFont.truetype("../big_noodle_titling.ttf", 120)
 
     for i in range(20, 25):
-        product = d['Productos'][i]
         price   = f"{d['Precios'][i]}"
         x       = d['X'][i]
         y       = d['Y'][i]
@@ -45,7 +43,6 @@ def sandwich3(d):
     font = ImageFont.truetype("../big_noodle_titling.ttf", 120)
 
     for i in range(25, 31):
-        product = d['Productos'][i]
         price   = f"{d['Precios'][i]}"
         x       = d['X'][i]
         y       = d['Y'][i]
@@ -63,7 +60,6 @@ def sandwich4(d):
     font = ImageFont.truetype("../big_noodle_titling.ttf", 200)
 
     idx = 30
-    product = d['Productos'][idx]
     price   = f"${d['Precios'][idx]}"
     x       = 15.0
     y       = 0.0
