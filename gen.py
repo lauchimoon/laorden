@@ -66,7 +66,7 @@ if generate == BURGER:
             case '5': burger_all()
 
 elif generate == SANDWICH:
-    print("¿Qué deseas generar de burger?")
+    print("¿Qué deseas generar de sandwich?")
     print("1. Imagen 1\n2. Imagen 2\n3. Imagen 3\n4. Imagen 4\n5. Video\n6. Imagenes\n7. Todo")
     print("Puedes seleccionar varias opciones separando por comas. ej: 1,3,5")
 
@@ -95,7 +95,7 @@ elif generate == SANDWICH:
             case '7': sandwich_all()
 
 elif generate == BANNERS:
-    print("¿Qué deseas generar de burger?")
+    print("¿Qué deseas generar de banners?")
     print("1. Imagen 1\n2. Imagen 2\n3. Imagen 3\n4. Imagen 4\n5. Imagen 5\n6. Imagen 6\n7. Todo")
     print("Puedes seleccionar varias opciones separando por comas. ej: 1,3,5")
 
