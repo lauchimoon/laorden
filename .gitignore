@@ -2,3 +2,6 @@ coords.py
 im.py
 out/
 __pycache__/
+build/
+dist/
+*.spec
