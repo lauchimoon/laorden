@@ -105,7 +105,7 @@ def tv2():
         clip1, table, clip2, table, clip3, table, clip4, table,
         clip5, table, clip6, table, clip7, table, clip8, table,
         clip9, table
-    ]) # Generates ~17 minutes
+    ]*4)
 
     result.write_videofile('./out/tv2-burgerout.mp4', fps=30)
 
