@@ -29,27 +29,109 @@ def burger1(d):
 
     img.save('./out/burger1.png')
 
-# Generate price tables for second template
-def burger2(d):
-    img = Image.open("templates/template-burger2.png")
-    draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("big_noodle_titling.ttf", 80)
+def tv1(d):
+    cross_img = ImageClip("./x.png")
 
-    for i in range(25, 32):
-        price   = f"${d['Precios'][i]}"
-        x       = d['X'][i]
-        y       = d['Y'][i]
-        coords  = (int(x), int(y))
+    # Clip 1
+    # ------
+    price1_bf = d['Precios'][28]
+    price1_aft = d['Precios'][29]
+    coords1_bf = (int(d['X'][28]), int(d['Y'][28]))
+    coords1_aft = (int(d['X'][29]), int(d['Y'][29]))
+
+    clip1 = VideoFileClip("./clips/tv1-burger1.mp4")
+    txt1_bf = TextClip(f"${price1_bf}", font="./big_noodle_titling.ttf", color='white', fontsize=140).set_position(coords1_bf).set_duration(15).fadein(2).fadeout(2)
+    txt1_aft = TextClip(f"${price1_aft}", font="./big_noodle_titling.ttf", color='white', fontsize=220).set_position(coords1_aft).set_duration(15).fadein(2).fadeout(2)
+    composite1 = CompositeVideoClip([
+        clip1, txt1_bf, cross_img.set_position((coords1_bf[0] - 100, coords1_bf[1] - 10)).set_duration(15).resize(5).fadein(2).fadeout(2), txt1_aft
+    ])
+    # ------
+
+    # Clip 2
+    # ------
+    price2_bf = d['Precios'][30]
+    price2_aft = d['Precios'][31]
+    coords2_bf = (int(d['X'][30]), int(d['Y'][30]))
+    coords2_aft = (int(d['X'][31]), int(d['Y'][31]))
+
+    clip2 = VideoFileClip("./clips/tv1-burger2.mp4")
+    txt2_bf = TextClip(f"${price2_bf}", font="./big_noodle_titling.ttf", color='white', fontsize=140).set_position(coords2_bf).set_duration(15).fadein(2).fadeout(2)
+    txt2_aft = TextClip(f"${price2_aft}", font="./big_noodle_titling.ttf", color='white', fontsize=220).set_position(coords2_aft).set_duration(15).fadein(2).fadeout(2)
+    composite2 = CompositeVideoClip([
+        clip2, txt2_bf, cross_img.set_position((coords2_bf[0] - 100, coords2_bf[1] - 30)).set_duration(15).resize(5).fadein(2).fadeout(2), txt2_aft
+    ])
+    # ------
+
+    # Clip 3
+    # ------
+    price3 = d['Precios'][32]
+    coords3 = (int(d['X'][32]), int(d['Y'][32]))
+
+    clip3 = VideoFileClip("./clips/tv1-burger3.mp4")
+    txt3 = TextClip(f"${price3}", font="./big_noodle_titling.ttf", color='white', fontsize=200).set_position(coords3).set_duration(12).fadein(2.2).fadeout(1)
+    composite3 = CompositeVideoClip([
+        clip3, txt3
+    ])
+    # ------
+
+    # Clip 4
+    # ------
+    price4 = d['Precios'][33]
+    coords4 = (int(d['X'][33]), int(d['Y'][33]))
+
+    clip4 = VideoFileClip("./clips/tv1-burger4.mp4")
+    txt4 = TextClip(f"${price4}", font="./big_noodle_titling.ttf", color='white', fontsize=200).set_position(coords4).set_duration(12).fadein(2).fadeout(2)
+    composite4 = CompositeVideoClip([
+        clip4, txt4
+    ])
+    # ------
+
+    result = concatenate_videoclips([composite1, composite2, composite3, composite4]*16) # Generates ~15 minutes
+    result.write_videofile('./out/tv1-burgerout.mp4', fps=30)
+
+def tv2():
+    table = ImageClip('./out/burger1.png').set_duration(40).fadein(1).fadeout(1)
+    clip1 = VideoFileClip('./clips/tv2-burger1.mp4')
+    clip2 = VideoFileClip('./clips/tv2-burger2.mp4')
+    clip3 = VideoFileClip('./clips/tv2-burger3.mp4')
+    clip4 = VideoFileClip('./clips/tv2-burger4.mp4')
+
+    result = concatenate_videoclips([
+        clip1, table, clip2, table, clip3, table, clip4, table
+    ]*4) # Generates ~17 minutes
+
+    result.write_videofile('./out/tv2-burgerout.mp4', fps=30)
+
+def tv3(d):
+    # Image part
+    # ----------
+    img = Image.open('./templates/template-burger3.png')
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype('./big_noodle_titling.ttf', 85)
+
+    for i in range(34, 50):
+        price = f"${d['Precios'][i]}"
+        x = d['X'][i]
+        y = d['Y'][i]
+        coords = (int(x), int(y))
+
         draw.text(coords, price, WHITE, font=font)
 
-    img.save('./out/burger2.png')
+    img.save('./out/burger3.png')
+    # ----------
 
-# Generate video. Requires generated images
-def burger_video():
-    clip1 = VideoFileClip("clips/clip1.mp4")
-    clip2 = VideoFileClip("clips/clip2.mp4")
-    prices1 = ImageClip("out/burger1.png")
+    # Video part
+    # ----------
+    clip1 = VideoFileClip('./clips/tv3-burger1.mp4')
+    clip2 = VideoFileClip('./clips/tv3-burger2.mp4').fadein(1).fadeout(1)
+    clip3 = VideoFileClip('./clips/tv3-burger3.mp4').fadein(1).fadeout(1)
+    clip4 = VideoFileClip('./clips/tv3-burger4.mp4')
+    table = ImageClip('./out/burger3.png').set_duration(30).fadein(2).fadeout(2)
 
-    result = concatenate_videoclips([clip1, prices1.set_duration(30), clip2])
-    result.write_videofile("out/clip.mp4")
+    result = concatenate_videoclips([
+        clip1, table, clip2, table, clip3, table, clip4, table
+    ]*6) # Generates ~16 minutes
+
+    result.write_videofile('./out/tv3-burgerout.mp4', fps=30)
+    # ----------
 

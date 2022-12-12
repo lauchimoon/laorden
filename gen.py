@@ -18,9 +18,9 @@ SANDWICH = '2'
 BANNERS = '3'
 
 def burger_all():
-    burger.burger1(data_burger)
-    burger.burger2(data_burger)
-    burger.burger_video()
+    burger.tv1(data_burger)
+    burger.tv2()
+    burger.tv3(data_burger)
 
 def sandwich_all():
     sandwich.sandwich1(data_sandwich)
@@ -42,7 +42,7 @@ print("1. burger\n2. sandwich\n3. banners")
 generate = input(">> ")
 if generate == BURGER:
     print("¿Qué deseas generar de burger?")
-    print("1. Imagen 1\n2. Imagen 2\n3. Video\n4. Imagenes\n5. Todo")
+    print("1. Imagen 1\n2. TV 1\n3. TV 2\n4. TV 3\n5. Todo")
     print("Puedes seleccionar varias opciones separando por comas. ej: 1,3,5")
 
     valid = ['1', '2', '3', '4', '5']
@@ -58,11 +58,9 @@ if generate == BURGER:
 
         match elem:
             case '1': burger.burger1(data_burger)
-            case '2': burger.burger2(data_burger)
-            case '3': burger.burger_video(data_burger)
-            case '4':
-                burger.burger1(data_burger)
-                burger.burger2(data_burger)
+            case '2': burger.tv1(data_burger)
+            case '3': burger.tv2(data_burger)
+            case '4': burger.tv3(data_burger)
             case '5': burger_all()
 
 elif generate == SANDWICH:
