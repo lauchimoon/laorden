@@ -2,7 +2,7 @@
 
 ## Clonar
 ```
-$ git clone https://github.com/laurenL12/laorden.git
+$ git clone https://github.com/laurenL1202/laorden.git
 $ cd laorden/
 $ pip install -r requirements.txt # Descarga los paquetes necesarios
 ```
