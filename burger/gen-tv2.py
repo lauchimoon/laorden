@@ -11,6 +11,7 @@ clip3 = VideoFileClip('../clips/tv2-burger3.mp4')
 clip4 = VideoFileClip('../clips/tv2-burger4.mp4')
 
 result = concatenate_videoclips([
-    clip1, table, clip2, table, clip3, table, clip4
-])
-result.preview()
+    clip1, table, clip2, table, clip3, table, clip4, table
+]*4) # Generates ~17 minutes
+
+result.write_videofile('../out/tv2-burgerout.mp4', fps=30)

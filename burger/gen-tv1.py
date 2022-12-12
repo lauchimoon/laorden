@@ -59,4 +59,5 @@ composite4 = CompositeVideoClip([
 ])
 # ------
 
-composite4.preview()
+result = concatenate_videoclips([composite1, composite2, composite3, composite4]*16) # Generates ~15 minutes
+result.write_videofile('../out/tv1-burgerout.mp4', fps=30)
