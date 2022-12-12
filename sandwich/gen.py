@@ -22,6 +22,7 @@ def sandwich1(d):
         draw.text(coords, price, WHITE, font=font)
 
     filename = f"resources/sandwich1-{today}.png"
+    img = img.transpose(Image.ROTATE_270)
     img.save(filename)
 
 # Generate price tables for second template
@@ -38,6 +39,7 @@ def sandwich2(d):
         draw.text(coords, price, WHITE, font=font)
 
     filename = f"resources/sandwich2-{today}.png"
+    img = img.transpose(Image.ROTATE_270)
     img.save(filename)
 
 # Generate price tables for third template
@@ -54,6 +56,7 @@ def sandwich3(d):
         draw.text(coords, price, WHITE, font=font)
 
     filename = f"resources/sandwich3-{today}.png"
+    img = img.transpose(Image.ROTATE_270)
     img.save(filename)
 
 # Generate price tables for fourth template
@@ -72,6 +75,7 @@ def sandwich4(d):
     draw.text(coords, price, COLOR, font=font)
 
     filename = f"resources/sandwich4-{today}.png"
+    img = img.transpose(Image.ROTATE_270)
     img.save(filename)
 
 # Generate video. Requires generated images
