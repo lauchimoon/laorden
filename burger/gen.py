@@ -90,15 +90,22 @@ def tv1(d):
     result.write_videofile('./out/tv1-burgerout.mp4', fps=30)
 
 def tv2():
-    table = ImageClip('./out/burger1.png').set_duration(40).fadein(1).fadeout(1)
+    table = ImageClip('./out/burger1.png').set_duration(25).fadein(1).fadeout(1)
     clip1 = VideoFileClip('./clips/tv2-burger1.mp4')
     clip2 = VideoFileClip('./clips/tv2-burger2.mp4')
     clip3 = VideoFileClip('./clips/tv2-burger3.mp4')
     clip4 = VideoFileClip('./clips/tv2-burger4.mp4')
+    clip5 = VideoFileClip('./clips/tv2-burger5.mp4')
+    clip6 = VideoFileClip('./clips/tv2-burger6.mp4')
+    clip7 = VideoFileClip('./clips/tv2-burger7.mp4')
+    clip8 = VideoFileClip('./clips/tv2-burger8.mp4')
+    clip9 = VideoFileClip('./clips/tv2-burger9.mp4')
 
     result = concatenate_videoclips([
-        clip1, table, clip2, table, clip3, table, clip4, table
-    ]*4) # Generates ~17 minutes
+        clip1, table, clip2, table, clip3, table, clip4, table,
+        clip5, table, clip6, table, clip7, table, clip8, table,
+        clip9, table
+    ]) # Generates ~17 minutes
 
     result.write_videofile('./out/tv2-burgerout.mp4', fps=30)
 

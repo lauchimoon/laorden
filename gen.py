@@ -60,7 +60,7 @@ if generate == BURGER:
         match elem:
             case '1': burger.burger1(data_burger)
             case '2': burger.tv1(data_burger)
-            case '3': burger.tv2(data_burger)
+            case '3': burger.tv2()
             case '4': burger.tv3(data_burger)
             case '5': burger_all()
 
