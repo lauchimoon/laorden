@@ -8,6 +8,7 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 
 cross_img = Image.open("x.png")
+today = datetime.today().strftime('%d/%m/%Y')
 
 def banner1(d):
     img = Image.open("templates/template-banner1.png")
@@ -24,7 +25,8 @@ def banner1(d):
     draw.bitmap((coords_bf[0] - 50, coords_bf[1] - 25), cross_img.resize((260, 140)), RED)
     draw.text(coords_aft, price_aft, WHITE, font=font_big)
 
-    img.save('out/banner1.png')
+    filename = f"resources/banner1-{today}.png"
+    img.save(filename)
 
 def banner2(d):
     img = Image.open("templates/template-banner2.png")
@@ -36,7 +38,8 @@ def banner2(d):
 
     draw.text(coords, price, WHITE, font=font)
 
-    img.save('out/banner2.png')
+    filename = f"resources/banner2-{today}.png"
+    img.save(filename)
 
 def banner3(d):
     img = Image.open("templates/template-banner3.png")
@@ -48,7 +51,8 @@ def banner3(d):
 
     draw.text(coords, price, WHITE, font=font)
 
-    img.save('out/banner3.png')
+    filename = f"resources/banner3-{today}.png"
+    img.save(filename)
 
 def banner4(d):
     img = Image.open("templates/template-banner4.png")
@@ -67,7 +71,8 @@ def banner4(d):
     draw.text((coords_aft[0] + 5, coords_aft[1] + 5), price_aft, BLACK, font=font_big)
     draw.text(coords_aft, price_aft, WHITE, font=font_big)
 
-    img.save('out/banner4.png')
+    filename = f"resources/banner4-{today}.png"
+    img.save(filename)
 
 def banner5(d):
     img = Image.open("templates/template-banner5.png")
@@ -87,7 +92,8 @@ def banner5(d):
     #draw.text((coords_aft[0] + 5, coords_aft[1] + 5), price_aft, BLACK, font=font_big)
     draw.text(coords_aft, price_aft, WHITE, font=font_big)
 
-    img.save('out/banner5.png')
+    filename = f"resources/banner5-{today}.png"
+    img.save(filename)
 
 def banner6(d):
     img = Image.open("templates/template-banner6.png")
@@ -99,5 +105,6 @@ def banner6(d):
 
     draw.text(coords, price, WHITE, font=font)
 
-    img.save('out/banner6.png')
+    filename = f"resources/banner6-{today}.png"
+    img.save(filename)
 

@@ -8,6 +8,9 @@ import banners.gen as banners
 if not os.path.exists('out/'):
     os.mkdir('out/')
 
+if not os.path.exists('resources/'):
+    os.mkdir('resources/')
+
 excel = pd.ExcelFile('data.xlsx')
 data_burger = pd.read_excel(excel, 'Burger')
 data_sandwich = pd.read_excel(excel, 'Sandwich')

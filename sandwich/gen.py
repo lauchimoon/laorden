@@ -5,6 +5,7 @@ from PIL import ImageDraw
 from moviepy.editor import *
 
 WHITE = (255, 255, 255)
+today = datetime.today().strftime('%d/%m/%Y')
 
 # Generate price tables for first template
 def sandwich1(d):
@@ -19,7 +20,8 @@ def sandwich1(d):
         coords  = (int(x), int(y))
         draw.text(coords, price, WHITE, font=font)
 
-    img.save('out/sandwich1.png')
+    filename = f"resources/sandwich1-{today}.png"
+    img.save(filename)
 
 # Generate price tables for second template
 def sandwich2(d):
@@ -34,7 +36,8 @@ def sandwich2(d):
         coords  = (int(x), int(y))
         draw.text(coords, price, WHITE, font=font)
 
-    img.save('out/sandwich2.png')
+    filename = f"resources/sandwich2-{today}.png"
+    img.save(filename)
 
 # Generate price tables for third template
 def sandwich3(d):
@@ -49,7 +52,8 @@ def sandwich3(d):
         coords  = (int(x), int(y))
         draw.text(coords, price, WHITE, font=font)
 
-    img.save('out/sandwich3.png')
+    filename = f"resources/sandwich3-{today}.png"
+    img.save(filename)
 
 # Generate price tables for fourth template
 def sandwich4(d):
@@ -66,7 +70,8 @@ def sandwich4(d):
     coords  = (int(x), int(y))
     draw.text(coords, price, COLOR, font=font)
 
-    img.save('out/sandwich4.png')
+    filename = f"resources/sandwich4-{today}.png"
+    img.save(filename)
 
 # Generate video. Requires generated images
 def sandwich_video():
@@ -77,15 +82,16 @@ def sandwich_video():
 
     clips = [ # Lasts 1:40 with 60 fps.
         ImageClip("clips/sandwich1.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
-        ImageClip("out/sandwich1.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
+        ImageClip(f"resources/sandwich1-{today}.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
         ImageClip("clips/sandwich3.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
-        ImageClip("out/sandwich2.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
+        ImageClip(f"resources/sandwich2-{today}.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
         ImageClip("clips/sandwich5.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
-        ImageClip("out/sandwich3.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
+        ImageClip(f"resources/sandwich3-{today}.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
         ImageClip("clips/sandwich7.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
-        ImageClip("out/sandwich4.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
+        ImageClip(f"resources/sandwich4-{today}.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
     ]
 
     result = concatenate_videoclips(clips*REPEAT)
-    result.write_videofile('out/clip.mp4', fps=30)
+    filename = f"out/Video-Sandwich-Lagos-{today}.mp4"
+    result.write_videofile(filename, fps=30)
 

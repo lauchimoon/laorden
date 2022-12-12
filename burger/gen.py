@@ -3,8 +3,10 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 from moviepy.editor import *
+import datetime
 
 WHITE = (255, 255, 255)
+today = datetime.today().strftime('%d/%m/%Y')
 
 # Generate price tables for first template
 def burger1(d):
@@ -27,7 +29,8 @@ def burger1(d):
         coords  = (int(x), int(y))
         draw.text(coords, price, WHITE, font=font_sml)
 
-    img.save('./out/burger1.png')
+    filename = f"./resources/Cartel-Burger-1-{today}.png"
+    img.save(filename)
 
 def tv1(d):
     cross_img = ImageClip("./x.png")
@@ -87,10 +90,12 @@ def tv1(d):
     # ------
 
     result = concatenate_videoclips([composite1, composite2, composite3, composite4]*16) # Generates ~15 minutes
-    result.write_videofile('./out/tv1-burgerout.mp4', fps=30)
+    filename = f"./out/Video-Burger-1-{today}.mp4"
+    result.write_videofile(filename, fps=30)
 
 def tv2():
-    table = ImageClip('./out/burger1.png').set_duration(25).fadein(1).fadeout(1)
+    filename1 = f"./resources/Cartel-Burger-1-{today}.png"
+    table = ImageClip(filename1).set_duration(25).fadein(1).fadeout(1)
     clip1 = VideoFileClip('./clips/tv2-burger1.mp4')
     clip2 = VideoFileClip('./clips/tv2-burger2.mp4')
     clip3 = VideoFileClip('./clips/tv2-burger3.mp4')
@@ -107,7 +112,8 @@ def tv2():
         clip9, table
     ]*4)
 
-    result.write_videofile('./out/tv2-burgerout.mp4', fps=30)
+    filename2 = f"./out/Video-Burger-2-{today}.mp4"
+    result.write_videofile(filename, fps=30)
 
 def tv3(d):
     # Image part
@@ -124,7 +130,8 @@ def tv3(d):
 
         draw.text(coords, price, WHITE, font=font)
 
-    img.save('./out/burger3.png')
+    filename1 = f"./resources/Cartel-Burger-3-{today}.png"
+    img.save(filename1)
     # ----------
 
     # Video part
@@ -133,12 +140,13 @@ def tv3(d):
     clip2 = VideoFileClip('./clips/tv3-burger2.mp4').fadein(1).fadeout(1)
     clip3 = VideoFileClip('./clips/tv3-burger3.mp4').fadein(1).fadeout(1)
     clip4 = VideoFileClip('./clips/tv3-burger4.mp4')
-    table = ImageClip('./out/burger3.png').set_duration(30).fadein(2).fadeout(2)
+    table = ImageClip(filename1).set_duration(30).fadein(2).fadeout(2)
 
     result = concatenate_videoclips([
         clip1, table, clip2, table, clip3, table, clip4, table
     ]*6) # Generates ~16 minutes
 
+    filename2 = f"./out/Video-Burger-3-{today}.mp4"
     result.write_videofile('./out/tv3-burgerout.mp4', fps=30)
     # ----------
 
