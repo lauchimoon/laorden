@@ -4,6 +4,7 @@
 ```
 $ git clone https://github.com/laurenL12/laorden.git
 $ cd laorden/
+$ pip install -r requirements.txt # Descarga los paquetes necesarios
 ```
 
 ## Generar imagenes y videos
@@ -18,6 +19,3 @@ El contenido generado pertenece al directorio `out/`, que se crea durante el pro
 La hoja de cálculo `data.xlsx` provee los precios e información de cada producto para generar las imagenes y videos.
 
 Lo importante está en cambiar el precio; los otros campos no deberían ser alterados.
-
-## Crear un ejecutable con PyInstaller
-WIP
