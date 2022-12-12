@@ -18,6 +18,7 @@ SANDWICH = '2'
 BANNERS = '3'
 
 def burger_all():
+    burger.burger1(data_burger)
     burger.tv1(data_burger)
     burger.tv2()
     burger.tv3(data_burger)
