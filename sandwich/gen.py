@@ -76,13 +76,13 @@ def sandwich_video():
     REPEAT = 10
 
     clips = [ # Lasts 1:40 with 60 fps.
-        ImageClip("clips/1.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
+        ImageClip("clips/sandwich1.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
         ImageClip("out/sandwich1.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
-        ImageClip("clips/3.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
+        ImageClip("clips/sandwich3.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
         ImageClip("out/sandwich2.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
-        ImageClip("clips/5.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
+        ImageClip("clips/sandwich5.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
         ImageClip("out/sandwich3.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
-        ImageClip("clips/7.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
+        ImageClip("clips/sandwich7.png").set_duration(DUR_1).fadein(FADE).fadeout(FADE),
         ImageClip("out/sandwich4.png").set_duration(DUR_2).fadein(FADE).fadeout(FADE),
     ]
 
