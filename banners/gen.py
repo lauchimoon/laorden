@@ -9,7 +9,7 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 
 cross_img = Image.open("x.png")
-today = datetime.date.today().strftime('%d/%m/%Y')
+today = datetime.date.today().strftime('%d-%m-%Y')
 
 def banner1(d):
     img = Image.open("templates/template-banner1.png")

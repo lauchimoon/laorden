@@ -6,7 +6,7 @@ from moviepy.editor import *
 import datetime
 
 WHITE = (255, 255, 255)
-today = datetime.date.today().strftime('%d/%m/%Y')
+today = datetime.date.today().strftime('%d-%m-%Y')
 
 # Generate price tables for first template
 def burger1(d):
