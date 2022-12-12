@@ -2,13 +2,14 @@ import pandas as pd
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
+import datetime
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 
 cross_img = Image.open("x.png")
-today = datetime.today().strftime('%d/%m/%Y')
+today = datetime.date.today().strftime('%d/%m/%Y')
 
 def banner1(d):
     img = Image.open("templates/template-banner1.png")

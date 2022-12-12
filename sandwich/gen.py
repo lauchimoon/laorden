@@ -3,9 +3,10 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 from moviepy.editor import *
+import datetime
 
 WHITE = (255, 255, 255)
-today = datetime.today().strftime('%d/%m/%Y')
+today = datetime.date.today().strftime('%d/%m/%Y')
 
 # Generate price tables for first template
 def sandwich1(d):
