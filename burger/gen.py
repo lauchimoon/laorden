@@ -57,7 +57,7 @@ def tv1(d):
     coords2_bf = (int(d['X'][30]), int(d['Y'][30]))
     coords2_aft = (int(d['X'][31]), int(d['Y'][31]))
 
-    clip2 = VideoFileClip("./clips/tv1-burger2.mp4").set_duration(5)
+    clip2 = VideoFileClip("./clips/tv1-burger2.mp4")
     txt2_bf = TextClip(f"${price2_bf}", font="./big_noodle_titling.ttf", color='white', fontsize=140).set_position(coords2_bf).set_duration(15).fadein(2).fadeout(2)
     txt2_aft = TextClip(f"${price2_aft}", font="./big_noodle_titling.ttf", color='white', fontsize=220).set_position(coords2_aft).set_duration(15).fadein(2).fadeout(2)
     composite2 = CompositeVideoClip([
