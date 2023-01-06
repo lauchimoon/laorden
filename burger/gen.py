@@ -147,6 +147,6 @@ def tv3(d):
     ]*6) # Generates ~16 minutes
 
     filename2 = f"./out/Video-Burger-3-{today}.mp4"
-    result.write_videofile('./out/tv3-burgerout.mp4', fps=30)
+    result.write_videofile(filename2, fps=30)
     # ----------
 
